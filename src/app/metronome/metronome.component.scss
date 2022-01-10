@@ -42,23 +42,24 @@
       background-color: #0A0A0A;
       .leds {
         height: 76px;
-        padding-top: 4px;
+        padding-top: 2px;
         color: lime;
+        font-family: 'VT323', monospace;
         .time {
           width: 48px;
-          margin-left: 51px;
-          font-size: 32px;
+          margin-left: 56px;
+          font-size: 40px;
         }
         .tempo {
           width: 96px;
-          margin-left: 75px;
-          font-size: 48px;
+          margin-left: 73px;
+          font-size: 64px;
         }
         .glass {
           top: 0;
           background: rgba(0, 0, 0, 0.2);
-          backdrop-filter: blur(1.4px);
-          -webkit-backdrop-filter: blur(1.4px);
+          backdrop-filter: blur(1.0px);
+          -webkit-backdrop-filter: blur(1.0px);
         }
       }
     }
@@ -66,38 +67,100 @@
     .controls {
       height: 120px;
       margin-top: 8px;
-      .basic {
-        background-color: blue;
-        .control {
-          &:nth-of-type(4) {
-            margin-left: 20px;
-            margin-right: 4px;
+      background-color: #1D1D1D;
+      .control {
+        button {
+          width: 44px;
+          height: 44px;
+          background-color: transparent;
+          box-sizing: border-box;
+          color: green;
+          border-left: 2px solid #0A0A0A;
+          border-right: 2px solid #0A0A0A;
+          outline: none;
+          margin-right: 12px;
+          &:nth-of-type(2) {
+            margin-right: 44px;
           }
-          button {
-            width: 58px;
-            height: 58px;
-            border: none;
-            outline: none;
+          &:nth-of-type(3) {
+            margin-right: 0;
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+          &.top {
+            border-top: 2px solid #0A0A0A;
+            border-bottom: 0;
+            border-radius: 12px 12px 0 0;
             &.sm {
-              width: 36px;
-              height: 36px;
+              width: 42px;
+              // border-left: 0;
+              border-radius: 0 12px 0 12px;
             }
-            &.md {
-              width: 36px;
+            &.lg {
+              width: 58px;
+              border-right: 0;
+              border-radius: 12px 0 0 0;
+            }
+          }
+          &.bottom {
+            border-bottom: 2px solid #0A0A0A;
+            border-top: 0;
+            border-radius: 0 0 12px 12px;
+            &.sm {
+              width: 42px;
+              // border-left: 0;
+              border-radius: 12px 0 12px 0;
+            }
+            &.lg {
+              width: 58px;
+              border-right: 0;
+              border-radius: 0 0 0 12px;
             }
           }
         }
-        .label {
-          width: 48px;
-          p {
-            font-size: 12px;
-            &:first-of-type {
-              margin-bottom: 50px;
-            }
+      }
+      .label {
+        height: 32px;
+        p {
+          width: 40px;
+          font-family: 'Roboto Condensed', sans-serif;
+          font-size: 12px;
+          border-left: 2px solid #0A0A0A;
+          border-right: 2px solid #0A0A0A;
+          color: #D2D2D2;
+          // background-color: rgba(255,255,255,0.2);
+          &:nth-of-type(1) {
+            margin-left: 30px;
+            margin-right: 12px;
+          }
+          &:nth-of-type(3) {
+            width: 96px;
+            margin-left: 44px;
           }
         }
       }
     }
 
+    .main {
+      margin-top: 16px;
+      button {
+        width: 100px;
+        height: 44px;
+        background-color: transparent;
+        box-sizing: border-box;
+        color: green;
+        border: 2px solid #0A0A0A;
+        border-radius: 12px;
+        outline: none;
+        margin-right: 30px;
+      }
+      p {
+        margin-left: 8px;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 28px;
+        color: #858585;
+      }
+    }
   }
 }

@@ -13,7 +13,7 @@ export class MetronomeComponent implements AfterViewInit {
   leds!: ElementRef<HTMLCanvasElement>;
   private ledsCtx!: CanvasRenderingContext2D | null;
 
-  audioCtx: AudioContext = new AudioContext();
+  audioCtx!: AudioContext;
   metronomeWorker: Worker;
 
   playing: boolean = false;
@@ -51,16 +51,21 @@ export class MetronomeComponent implements AfterViewInit {
     this.playing = !this.playing;
     if (!this.playing) {
       this.metronomeWorker.postMessage('stop');
-      this.resetMetronome();
+      setTimeout(() => {
+        this.resetMetronome();
+      }, 100);
       return;
+    }
+    if (!this.audioCtx) {
+      this.audioCtx = new AudioContext();
     }
     this.nextBeatTime = this.audioCtx.currentTime;
     this.metronomeWorker.postMessage('start');
     const buffer = this.audioCtx.createBuffer(1, 1, 22050);
     const node = this.audioCtx.createBufferSource();
+    this.ledsUpdate();
     node.buffer = buffer;
     node.start(0);
-    this.ledsUpdate();
     this.metronomeWorker.postMessage({'interval': this.workerIntervalMs});
   }
 
@@ -109,7 +114,14 @@ export class MetronomeComponent implements AfterViewInit {
   }
 
   onTempoChange(value: number): void {
-    this.settings.bpm += value;
+    const tempo = this.settings.bpm + value;
+    if (tempo > 300) {
+      this.settings.bpm = 300;
+    } else if (tempo < 33) {
+      this.settings.bpm = 33;
+    } else {
+      this.settings.bpm = tempo;
+    }
     this.saveSettings();
   }
 
