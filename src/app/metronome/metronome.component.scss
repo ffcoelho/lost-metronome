@@ -1,0 +1,103 @@
+.container {
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  padding: 8px;
+  border-radius: 7px;
+  background-color: #1D1D1D;
+  .content {
+  
+    .display-top {
+      background-color: #0A0A0A;
+      height: 24px;
+      .leds {
+        width: calc(100% - 20px);
+      }
+      .glass {
+        top: 0;
+        height: 24px;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(1.4px);
+        -webkit-backdrop-filter: blur(1.4px);
+      }
+      .cover {
+        top: 24px;
+        height: 8px;
+        .marks {
+          width: calc(100% - 26px);
+          height: 6px;
+          padding: 2px 13px 0 13px;
+          background-color: #1D1D1D;
+          .mark {
+            width: 1px;
+            height: 4px;
+            background-color: #D2D2D2;
+          }
+        }
+      }
+    }
+
+    .display-bottom {
+      height: 80px;
+      margin-top: 8px;
+      background-color: #0A0A0A;
+      .leds {
+        height: 76px;
+        padding-top: 4px;
+        color: lime;
+        .time {
+          width: 48px;
+          margin-left: 51px;
+          font-size: 32px;
+        }
+        .tempo {
+          width: 96px;
+          margin-left: 75px;
+          font-size: 48px;
+        }
+        .glass {
+          top: 0;
+          background: rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(1.4px);
+          -webkit-backdrop-filter: blur(1.4px);
+        }
+      }
+    }
+
+    .controls {
+      height: 120px;
+      margin-top: 8px;
+      .basic {
+        background-color: blue;
+        .control {
+          &:nth-of-type(4) {
+            margin-left: 20px;
+            margin-right: 4px;
+          }
+          button {
+            width: 58px;
+            height: 58px;
+            border: none;
+            outline: none;
+            &.sm {
+              width: 36px;
+              height: 36px;
+            }
+            &.md {
+              width: 36px;
+            }
+          }
+        }
+        .label {
+          width: 48px;
+          p {
+            font-size: 12px;
+            &:first-of-type {
+              margin-bottom: 50px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

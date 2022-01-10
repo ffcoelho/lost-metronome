@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="pos-r w-100 h-100 content">
+
+    <div class="d-f jc-c display-top">
+      <canvas class="leds" #leds></canvas>
+      <div class="glass pos-a w-100"></div>
+      <div class="cover pos-a w-100">
+        <div class="marks d-f jc-sb">
+          <div class="mark" *ngFor="let b of settings.beats | beats"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-f fd-c ai-c w-100 h-100 display-bottom">
+      <div class="leds pos-r d-f w-100">
+        <div class="time d-f fd-c jc-c ai-c">
+          <p>{{ settings.beats }}</p>
+          <p>{{ settings.note * 4 }}</p>
+        </div>
+        <div class="tempo d-f jc-c ai-c">
+          <p>{{ settings.bpm }}</p>
+        </div>
+        <div class="glass pos-a w-100 h-100"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="basic d-f w-100 h-100">
+        <div class="d-f fd-c jc-sb ai-c control">
+          <button class="sm" (click)="onBeatsChange(-1)">-</button>
+          <button class="sm" (click)="onNoteChange(true)"><</button>
+        </div>
+        <div class="d-f fd-c jc-c ai-c label">
+          <p>BEATS</p>
+          <p>NOTE</p>
+        </div>
+        <div class="d-f fd-c jc-sb ai-c control">
+          <button class="sm" (click)="onBeatsChange(1)">+</button>
+          <button class="sm" (click)="onNoteChange()">></button>
+        </div>
+        <div class="d-f fd-c jc-sb ai-c control">
+          <button class="md" (click)="onTempoChange(10)">+10</button>
+          <button class="md" (click)="onTempoChange(-10)">-10</button>
+        </div>
+        <div class="d-f fd-c jc-sb ai-c control">
+          <button (click)="onTempoChange(1)">+</button>
+          <button (click)="onTempoChange(-1)">-</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- <button (click)="onToggle()">START</button> -->
