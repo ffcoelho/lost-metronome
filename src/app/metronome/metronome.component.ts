@@ -194,7 +194,7 @@ export class MetronomeComponent implements AfterViewInit {
       this.ledsCtx!.clearRect(0 , 0, this.leds.nativeElement.width, this.leds.nativeElement.height); 
       for (let i = 0; i < this.settings.beats; i++) {
         this.ledsCtx!.fillStyle = (beat == i) ? ((beat % this.settings.beats === 0) ? 'red' : 'blue') : '#0A0A0A';
-        this.ledsCtx!.fillRect((x + 7) * i, 0, 7, 24);
+        this.ledsCtx!.fillRect((x + 7) * i, 3, 7, 24);
       }
       this.lastLedBeat = beat;
     }

@@ -26,10 +26,18 @@
 
     <div class="d-f fd-c jc-sb ai-c w-100 h-100 controls">
       <div class="d-f jc-sb ai-c control">
-        <button class="top" (click)="onBeatsChange(1)">+</button>
-        <button class="top" (click)="onNoteChange()">></button>
-        <button class="top lg" (click)="onTempoChange(1)">+</button>
-        <button class="top sm" (click)="onTempoChange(10)">10</button>
+        <button class="top" (click)="onBeatsChange(1)">
+          <img class="v-adj" src="../../assets/icons/bullet-fill.svg" alt=".">
+        </button>
+        <button class="top" (click)="onNoteChange()">
+          <img class="v-adj" src="../../assets/icons/bullet-fill.svg" alt=".">
+        </button>
+        <button class="top lg" (click)="onTempoChange(1)">
+          <img class="v-adj" src="../../assets/icons/bullet-fill.svg" alt=".">
+        </button>
+        <button class="top sm" (click)="onTempoChange(10)">
+          <img class="v-adj lg" src="../../assets/icons/bullet-outline.svg" alt=".">
+        </button>
       </div>
       <div class="d-f w-100 label">
         <p class="d-f jc-c ai-c h-100 ta-c">BEATS</p>
@@ -37,16 +45,26 @@
         <p class="d-f jc-c ai-c h-100 ta-c">TEMPO</p>
       </div>
       <div class="d-f jc-sb ai-c control">
-        <button class="bottom" (click)="onBeatsChange(-1)">-</button>
-        <button class="bottom" (click)="onNoteChange(true)"><</button>
-        <button class="bottom lg" (click)="onTempoChange(-1)">-</button>
-        <button class="bottom sm" (click)="onTempoChange(-10)">10</button>
+        <button class="bottom" (click)="onBeatsChange(-1)">
+          <img class="v-adj" src="../../assets/icons/bullet-fill.svg" alt=".">
+        </button>
+        <button class="bottom" (click)="onNoteChange(true)">
+          <img class="v-adj" src="../../assets/icons/bullet-fill.svg" alt=".">
+        </button>
+        <button class="bottom lg" (click)="onTempoChange(-1)">
+          <img class="v-adj" src="../../assets/icons/bullet-fill.svg" alt=".">
+        </button>
+        <button class="bottom sm" (click)="onTempoChange(-10)">
+          <img class="v-adj lg" src="../../assets/icons/bullet-outline.svg" alt=".">
+        </button>
       </div>
     </div>
 
     <div class="d-f jc-sb ai-fe main">
       <p>LM-10</p>
-      <button (click)="onToggle()">START</button>
+      <button (click)="onToggle()">
+        <img src="../../assets/icons/power.svg" alt=".">
+      </button>
     </div>
 
   </div>
